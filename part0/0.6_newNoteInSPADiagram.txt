@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>browser: Run event handler of 'notes_form'
+    Note right of browser: New note is visible
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    Note right of browser: JSON payload
+    server-->>browser: JSON message "note created"
+
+   
